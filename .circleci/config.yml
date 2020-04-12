@@ -22,6 +22,7 @@ jobs:
           command: |
             pwd
             ls
-            cd ~/repo
+            ls ~
+            ls /
             cat Makefile
             make lint 

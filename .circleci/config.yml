@@ -14,7 +14,7 @@ jobs:
             wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
             chmod +x /bin/hadolint
             wget https://github.com/htacg/tidy-html5/releases/download/5.4.0/tidy-5.4.0-64bit.deb
-            sudo dpkg -i tidy-5.4.0-64bit.deb
+            dpkg -i tidy-5.4.0-64bit.deb
       # run lint!
       - run:
           name: run lint

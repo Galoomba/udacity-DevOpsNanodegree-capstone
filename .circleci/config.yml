@@ -21,9 +21,4 @@ jobs:
       - run:
           name: run lint
           command: |
-            pwd
-            ls
-            ls ~/repo
-            ls /
-            cat Makefile
             make lint 

@@ -20,6 +20,8 @@ jobs:
       - run:
           name: run lint
           command: |
+            pwd
+            ls
             cd ~/repo
             cat Makefile
             make lint 

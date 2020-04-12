@@ -11,6 +11,7 @@ jobs:
           command: |
             apt-get update -y && apt upgrade -y
             apt-get install -y wget 
+            apt-get install -y build-essential
             wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
             chmod +x /bin/hadolint
             wget https://github.com/htacg/tidy-html5/releases/download/5.4.0/tidy-5.4.0-64bit.deb

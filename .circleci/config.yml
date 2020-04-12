@@ -6,6 +6,7 @@ jobs:
       - image: ubuntu:latest
     working_directory: ~/repo
     steps:
+      - checkout
       - run:
           name: Install hadolint and tidy
           command: |
@@ -22,7 +23,7 @@ jobs:
           command: |
             pwd
             ls
-            ls ~
+            ls ~/repo
             ls /
             cat Makefile
             make lint 

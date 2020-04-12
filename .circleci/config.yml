@@ -20,4 +20,6 @@ jobs:
       - run:
           name: run lint
           command: |
+            cd ~/repo
+            cat Makefile
             make lint 

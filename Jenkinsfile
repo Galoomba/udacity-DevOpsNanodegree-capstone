@@ -65,7 +65,7 @@ pipeline {
 
 		stage('Switch to green') {
 			steps {
-				withAWS(region:'us-east-1', credentials:'ecr_credentials') {
+				withAWS(region:'us-east-1', credentials:'aws-cre') {
 					sh '''
 						kubectl apply -f ./green-service.json
 					'''

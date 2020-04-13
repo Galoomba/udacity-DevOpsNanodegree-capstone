@@ -2,9 +2,9 @@
     "kind":"Service",
     "apiVersion":"v1",
     "metadata":{
-       "name":"BGlb",
+       "name":"bglb",
        "labels":{
-          "app":"BGlb"
+          "app":"bglb"
        }
     },
     "spec":{

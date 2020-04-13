@@ -20,7 +20,7 @@ pipeline {
 
          stage('Set kubectl cluster') {
 			steps {
-				withAWS(region:'us-east-1', credentials:'aws-static') {
+				withAWS(region:'us-east-1', credentials:'aws-cre') {
 					sh '''
 						kubectl config use-context arn:aws:eks:us-east-1:134672071065:cluster/capstonecluster
 					'''
@@ -30,7 +30,7 @@ pipeline {
 
         stage('Deploy blue container') {
 			steps {
-				withAWS(region:'us-east-1', credentials:'aws-static') {
+				withAWS(region:'us-east-1', credentials:'aws-cre') {
 					sh '''
 						kubectl apply -f ./blue-deployment.json
 					'''

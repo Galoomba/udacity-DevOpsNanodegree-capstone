@@ -18,18 +18,7 @@ pipeline {
              }
          }
 
-         stage('Set kubectl cluster') {
-			steps {
-				withAWS(region:'us-east-1', credentials:'aws-static') {
-					sh '''
-                        eks --region us-east-1 update-kubeconfig --name capstone  
-                        eks --region us-east-1 list-clusters
-						kubectl config use-context arn:aws:eks:us-east-1:134672071065:cluster/capstone 
-					'''
-				}
-			}
-		}
-
+    
         stage('Deploy blue container') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-static') {

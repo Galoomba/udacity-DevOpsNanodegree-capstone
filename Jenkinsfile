@@ -24,7 +24,6 @@ pipeline {
 					s3Upload( file:'index.html', bucket:'cloud9-134672071065-sam-deployments-us-east-2', path:'index.html')
 					sh '''
 						kubectl config use-context arn:aws:eks:us-east-1:134672071065:cluster/capstonecluster
-                        aws opsworks --region us-east-1 describe-my-user-profile
 					'''
 				}
 			}
@@ -34,6 +33,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-cre') {
 					sh '''
+					 	kubectl get svc
 						kubectl apply -f ./blue-deployment.json
 					'''
 				}

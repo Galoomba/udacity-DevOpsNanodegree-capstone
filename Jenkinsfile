@@ -17,5 +17,26 @@ pipeline {
                 }
              }
          }
+
+         stage('Set kubectl cluster') {
+			steps {
+				withAWS(region:'us-east-1', credentials:'aws-static') {
+					sh '''
+						kubectl config use-context arn:aws:eks:us-east-2:134672071065:cluster/capstone
+					'''
+				}
+			}
+		}
+
+        stage('Deploy blue container') {
+			steps {
+				withAWS(region:'us-east-1', credentials:'aws-static') {
+					sh '''
+						kubectl run capstone --port=80 --image=galoomba12/capstone --type=NodePort
+					'''
+				}
+			}
+		}
+
      }
 }

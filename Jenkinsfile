@@ -23,7 +23,7 @@ pipeline {
 				withAWS(region:'us-east-1', credentials:'aws-cre') {
 					sh '''
 						kubectl config use-context arn:aws:eks:us-east-1:134672071065:cluster/capstonecluster
-                        kubectl apply -f ./blue-deployment.json
+                        aws opsworks --region us-east-1 describe-my-user-profile
 					'''
 				}
 			}

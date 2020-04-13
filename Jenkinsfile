@@ -23,7 +23,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-static') {
 					sh '''
-						kubectl run capstone --port=80 --image=galoomba12/capstone --type=NodePort
+						kubectl run capstone --port=80 --image=galoomba12/capstone 
 					'''
 				}
 			}

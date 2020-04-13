@@ -21,7 +21,6 @@ pipeline {
          stage('Set kubectl cluster') {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-cre') {
-					s3Upload( file:'index.html', bucket:'cloud9-134672071065-sam-deployments-us-east-2', path:'index.html')
 					sh '''
 						kubectl config use-context arn:aws:eks:us-east-1:134672071065:cluster/capstonecluster
 					'''

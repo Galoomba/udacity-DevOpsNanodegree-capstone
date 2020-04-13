@@ -1,6 +1,6 @@
 #create cluster 
 eksctl create cluster \
-    --name capstonecluster \
+    --name mcluster \
     --region us-east-1  \
     --nodegroup-name standard-workers \
     --node-type t2.small \
@@ -8,4 +8,4 @@ eksctl create cluster \
     --nodes-min 1 \
     --nodes-max 3  
 #update kubeconfig
-aws eks --region us-east-1 update-kubeconfig --name capstonecluster
+aws eks --region us-east-1 update-kubeconfig --name mcluster

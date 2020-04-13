@@ -22,7 +22,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-cre') {
 					sh '''
-						kubectl config use-context arn:aws:eks:us-east-1:134672071065:cluster/capstonecluster
+						kubectl config use-context arn:aws:eks:us-east-1:134672071065:cluster/mcluster
 					'''
 				}
 			}
@@ -32,7 +32,6 @@ pipeline {
 			steps {
 				withAWS(region:'us-east-1', credentials:'aws-cre') {
 					sh '''
-					 	kubectl get svc
 						kubectl apply -f ./blue-deployment.json
 					'''
 				}
